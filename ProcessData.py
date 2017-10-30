@@ -26,7 +26,12 @@ def Get_Pedestrian_IDs(file):
 	print ("This Dataset contains {} unique pedestrians".format(len(Pedestrian_IDs)))
 	return Pedestrian_IDs
 
-Pedestrian_IDs = Get_Pedestrian_IDs(myfile)
+# Pedestrian_IDs = Get_Pedestrian_IDs(myfile)
+# pickle_out = open("pedestrianIDs.pickle", "wb")
+# pickle.dump(Pedestrian_IDs, pickle_out)
+# pickle_out.close()
+IDs_in = open("pedestrianIDs.pickle", "rb")
+Pedestrian_IDs = pickle.load(IDs_in)
 
 
 # Generate Dictionary Entries for first 15 Pedestrian IDs
@@ -44,10 +49,6 @@ def Generate_Tracjectories():
 # pickle_out = open("mydict.pickle", "wb")
 # pickle.dump(My_Trajectory_Dict, pickle_out)
 # pickle_out.close()
-
 pickle_in = open("mydict.pickle", "rb")
 My_Trajectory_Dict = pickle.load(pickle_in)
 # print (len(My_Trajectory_Dict.keys()))
-
-
-

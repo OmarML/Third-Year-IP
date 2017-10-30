@@ -4,38 +4,6 @@ import math as m
 import csv
 from ProcessData import My_Trajectory_Dict, Pedestrian_IDs
 # Use a que / stack to load pedestrians in order as they come in and leave
-x_pos1, y_pos1, x_pos2, y_pos2,x_pos3, y_pos3,x_pos4, y_pos4,x_pos5, y_pos5, x_pos6,y_pos6,x_pos7, y_pos7,x_pos8, y_pos8 = [[] for i in range(16)]
-
-bigArr = [[x_pos1, y_pos1], [x_pos2, y_pos2], [x_pos3, y_pos3], [x_pos4, y_pos4], [x_pos5, y_pos5], [x_pos6, y_pos6], [x_pos7, y_pos7], [x_pos8, y_pos8]]
-data = open('/Users/omardiab/Documents/University/atc-20121114.csv')
-reader = csv.reader(data)
-for row in reader:
-	if '9315400' in row:
-		x_pos1.append(float(row[2]) / 100.0)
-		y_pos1.append(float(row[3]) / 100.0)
-	elif '9330400' in row:
-		x_pos2.append(float(row[2]) / 100.0)
-		y_pos2.append(float(row[3]) / 100.0)
-	elif '9330600' in row:
-		x_pos3.append(float(row[2]) / 100.0)
-		y_pos3.append(float(row[3]) / 100.0)
-	elif '10085500' in row:
-		x_pos4.append(float(row[2]) / 100.0)
-		y_pos4.append(float(row[3]) / 100.0)
-	elif '9333701' in row:
-		x_pos5.append(float(row[2]) / 100.0)
-		y_pos5.append(float(row[3]) / 100.0)
-	elif '10082401' in row:
-		x_pos6.append(float(row[2]) / 100.0)
-		y_pos6.append(float(row[3]) / 100.0)
-	elif '10101401' in row:
-		x_pos7.append(float(row[2]) / 100.0)
-		y_pos7.append(float(row[3]) / 100.0)
-	elif '10094800' in row:
-		x_pos8.append(float(row[2]) / 100.0)
-		y_pos8.append(float(row[3]) / 100.0)
-
-
 
 background_colour = (255,255,255)
 (width, height) = (1000, 1000)
@@ -104,7 +72,6 @@ while running:
 	for event in pygame.event.get():
 		if event.type == pygame.QUIT:
 			running = False
-
 	screen.fill(background_colour)
 	indexing = 0
 	for particle in my_particles:
